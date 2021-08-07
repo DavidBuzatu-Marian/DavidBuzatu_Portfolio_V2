@@ -46,6 +46,21 @@
       font-size: 2rem;
     }
   }
+
+  &.btn-date {
+    background-color: $gray-background-color;
+    color: $primary-color;
+    padding: 0.75rem 1.5rem;
+  }
+
+  &.btn-tag {
+    background-color: $dark-blue-background-color;
+    padding: 0.5rem 1rem;
+    min-width: 7rem !important;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+    border-radius: 2rem;
+  }
 }
 
 @keyframes fade-up {

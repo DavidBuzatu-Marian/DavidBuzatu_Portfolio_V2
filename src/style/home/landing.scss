@@ -20,13 +20,12 @@
       left: 0;
     }
   }
-}
-
-svg {
-  width: 100%;
-  transform: rotate(120deg);
-  margin-top: 5rem;
-  max-width: 300px;
+  svg {
+    width: 100%;
+    transform: rotate(120deg);
+    margin-top: 5rem;
+    max-width: 300px;
+  }
 }
 
 @media (min-width: 1080px) {
