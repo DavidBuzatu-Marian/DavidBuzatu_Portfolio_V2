@@ -151,7 +151,7 @@ export const Comet = () => {
         fill='#3C908D'
       />
       <rect
-        className='particle'
+        className='particle-1'
         x='172.241'
         y='426.657'
         width='44'
@@ -161,7 +161,7 @@ export const Comet = () => {
         fill='#3C908D'
       />
       <rect
-        className='particle'
+        className='particle-2'
         x='112.33'
         y='460.887'
         width='44'
@@ -171,7 +171,7 @@ export const Comet = () => {
         fill='#3C908D'
       />
       <rect
-        className='particle'
+        className='particle-3'
         x='27'
         y='343.794'
         width='107'
