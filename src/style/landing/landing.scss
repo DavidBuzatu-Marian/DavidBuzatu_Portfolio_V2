@@ -26,20 +26,48 @@ svg {
   width: 100%;
   transform: rotate(120deg);
   margin-top: 5rem;
-  max-width: 736px;
+  max-width: 300px;
 }
 
 @media (min-width: 1080px) {
   svg {
+    position: absolute;
+    right: 5%;
+    top: 20%;
+    max-width: 436px;
+  }
+  .title {
+    margin-top: 10rem;
+    flex-direction: row;
+    display: flex;
+    padding: 0rem 6rem;
+    justify-content: flex-start;
+    align-items: center;
+
+    .main {
+      display: flex;
+      flex-direction: column;
+      text-align: start;
+      align-items: flex-start;
+      justify-content: flex-start;
+      max-width: 580px;
+    }
+  }
+}
+
+@media (min-width: 1920px) {
+  svg {
     transform: rotate(0);
     position: absolute;
     right: 10%;
+    top: auto;
+    max-width: 736px;
   }
   .title {
     margin-top: 20rem;
     flex-direction: row;
     display: flex;
-    padding: 0rem 10rem;
+    padding: 0rem 12.25rem;
     justify-content: flex-start;
     align-items: center;
 
