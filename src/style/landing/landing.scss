@@ -21,3 +21,35 @@
     }
   }
 }
+
+svg {
+  width: 100%;
+  transform: rotate(120deg);
+  margin-top: 5rem;
+  max-width: 736px;
+}
+
+@media (min-width: 1080px) {
+  svg {
+    transform: rotate(0);
+    position: absolute;
+    right: 10%;
+  }
+  .title {
+    margin-top: 20rem;
+    flex-direction: row;
+    display: flex;
+    padding: 0rem 10rem;
+    justify-content: flex-start;
+    align-items: center;
+
+    .main {
+      display: flex;
+      flex-direction: column;
+      text-align: start;
+      align-items: flex-start;
+      justify-content: flex-start;
+      max-width: 1080px;
+    }
+  }
+}
