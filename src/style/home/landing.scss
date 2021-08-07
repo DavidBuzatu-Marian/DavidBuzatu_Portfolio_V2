@@ -29,12 +29,6 @@
 }
 
 @media (min-width: 1080px) {
-  svg {
-    position: absolute;
-    right: 5%;
-    top: 20%;
-    max-width: 436px;
-  }
   .title {
     margin-top: 10rem;
     flex-direction: row;
@@ -51,17 +45,16 @@
       justify-content: flex-start;
       max-width: 580px;
     }
+    svg {
+      position: absolute;
+      right: 5%;
+      top: 20%;
+      max-width: 436px;
+    }
   }
 }
 
 @media (min-width: 1920px) {
-  svg {
-    transform: rotate(0);
-    position: absolute;
-    right: 10%;
-    top: auto;
-    max-width: 736px;
-  }
   .title {
     margin-top: 12rem;
     flex-direction: row;
@@ -77,6 +70,13 @@
       align-items: flex-start;
       justify-content: flex-start;
       max-width: 1080px;
+    }
+    svg {
+      transform: rotate(0);
+      position: absolute;
+      right: 10%;
+      top: auto;
+      max-width: 736px;
     }
   }
 }

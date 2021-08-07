@@ -23,6 +23,7 @@
       background-color: $white-background-color;
       border-radius: 1rem;
       margin-bottom: 2rem;
+      height: fit-content;
 
       .header {
         max-width: 25rem;
@@ -59,6 +60,31 @@
         .tags {
           margin-top: 1rem;
         }
+      }
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .container {
+    &-blogs {
+      grid-template-columns: 1fr 1fr;
+
+      .blog-card {
+        margin-right: 1rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    margin-top: 2rem;
+    &-blogs {
+      grid-template-columns: 1fr 1fr 1fr;
+
+      .blog-card {
+        margin-right: 2rem;
       }
     }
   }
