@@ -1,0 +1,23 @@
+.title {
+  display: inline-block;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  padding: 2.25rem;
+  margin-top: 3rem;
+
+  .title-bar {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    &::after {
+      content: '';
+      height: 0.75rem;
+      background-color: $secondary-color;
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+    }
+  }
+}

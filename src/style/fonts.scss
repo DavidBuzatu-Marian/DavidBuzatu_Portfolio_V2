@@ -1,6 +1,8 @@
 h1 {
   font-size: 3rem;
   font-weight: bold;
+  color: $title-color;
+  margin-bottom: 2rem;
 }
 
 h2 {
@@ -10,6 +12,9 @@ h2 {
 
 h3 {
   font-size: 1.25rem;
+  font-weight: normal;
+  margin-bottom: 1rem;
+  color: $text-gray-color !important;
 }
 
 p {
@@ -23,6 +28,7 @@ p {
 @media (min-width: 1080px) {
   h1 {
     font-size: 6rem;
+    margin-bottom: 2.25rem;
   }
 
   h2 {
