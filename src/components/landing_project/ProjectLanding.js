@@ -49,6 +49,9 @@ const ProjectLanding = () => {
             <ProjectCard key={idx} project={project} />
           ))}
         </div>
+        <button className='btn btn-github btn-3d-hover'>
+          <p>See GitHub</p>
+        </button>
       </div>
     </div>
   );

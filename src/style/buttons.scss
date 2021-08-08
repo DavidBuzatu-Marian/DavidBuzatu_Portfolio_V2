@@ -14,6 +14,7 @@
 
   &.btn-3d-hover {
     &:hover {
+      background-color: inherit;
       &::after {
         top: 0;
         left: 0;
@@ -40,18 +41,36 @@
     background-color: $primary-color;
     border-color: $primary-color;
     position: relative;
+    &:hover {
+      background-color: $dark-green-color;
+    }
   }
 
   &.btn-blogs {
     background-color: $secondary-color;
     border-color: $secondary-color;
     position: relative;
+    &:hover {
+      background-color: $light-green-color;
+    }
   }
 
   &.btn-project {
     background-color: $purple-color;
     border-color: $purple-color;
     position: relative;
+    &:hover {
+      color: $blue-color;
+    }
+  }
+
+  &.btn-github {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    position: relative;
+    &:hover {
+      background-color: $dark-blue-background-color;
+    }
   }
 
   &.btn-menu {

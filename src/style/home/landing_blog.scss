@@ -74,7 +74,7 @@
 
   .btn-blogs {
     margin-top: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 6rem;
   }
 }
 
@@ -117,6 +117,9 @@
     .btn-blogs {
       margin-right: calc((100vw - 3 * 25rem) / 2);
       margin-top: 2rem;
+      p {
+        font-size: 1.5rem !important;
+      }
     }
   }
 }
