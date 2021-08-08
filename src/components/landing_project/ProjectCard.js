@@ -1,13 +1,13 @@
 import React from 'react';
 
 const ProjectCard = ({
-  project: { title, date_created, description, language },
+  project: { full_name, updated_at, description, language, html_url },
 }) => {
   return (
     <div className='card-project'>
       <div className='body'>
         <div className='project-title'>
-          <p>{title}</p>
+          <p>{full_name}</p>
         </div>
         <div className='project-description'>
           <p>{description}</p>
@@ -20,7 +20,7 @@ const ProjectCard = ({
             <p>
               Updated on:
               <br />
-              {new Date(date_created).toLocaleDateString(
+              {new Date(updated_at).toLocaleDateString(
                 {},
                 {
                   timeZone: 'UTC',
@@ -32,7 +32,9 @@ const ProjectCard = ({
             </p>
           </div>
           <button className='btn btn-project btn-3d-hover'>
-            See repository
+            <a href={html_url} target='_blank' rel='noreferrer'>
+              See repository
+            </a>
           </button>
         </div>
       </div>

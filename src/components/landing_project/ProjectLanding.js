@@ -1,43 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ProjectCard from './ProjectCard';
 import GitHubLogo from '../../img/github.svg';
-
-const projects = [
-  {
-    id: 1,
-    title: 'Lorem ipsum dolor sit',
-    description:
-      ' Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet reprehenderit blanditiis accusantium qui laudantium vero?',
-    date_created: '2021-07-03T15:16:48.000Z',
-    language: 'GoLang',
-  },
-  {
-    id: 2,
-    title: 'Lorem ipsum dolor sit',
-    description:
-      ' Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet reprehenderit blanditiis accusantium qui laudantium vero?',
-    date_created: '2021-08-02T15:16:48.000Z',
-    language: 'Type Script',
-  },
-  {
-    id: 3,
-    title: 'Lorem ipsum dolor sit',
-    description:
-      ' Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet reprehenderit blanditiis accusantium qui laudantium vero?',
-    date_created: '2021-08-01T15:16:48.000Z',
-    language: 'C++',
-  },
-  {
-    id: 4,
-    title: 'Lorem ipsum dolor sit',
-    description:
-      ' Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet reprehenderit blanditiis accusantium qui laudantium vero?',
-    date_created: '2021-07-13T15:16:48.000Z',
-    language: 'Java',
-  },
-];
+import config from '../../config/default.json';
+import axios from 'axios';
 
 const ProjectLanding = () => {
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    const getLatestSixUpdatedRepositories = (repositories) => {
+      let repos = repositories;
+      repos.sort((r1, r2) => {
+        return new Date(r2.updated_at) - new Date(r1.updated_at);
+      });
+      repos = repos.slice(0, 6);
+      return repos;
+    };
+    const fetchProfileInfo = async () => {
+      axios.defaults.headers.common['Authorization'] =
+        'token ' + config.github_api;
+      const res = await axios.get(
+        'https://api.github.com/users/DavidBuzatu-Marian/repos'
+      );
+      const repos = getLatestSixUpdatedRepositories(res.data);
+      setProjects(repos);
+    };
+    fetchProfileInfo();
+  }, []);
+
   return (
     <div className='container-projects'>
       <h2>
