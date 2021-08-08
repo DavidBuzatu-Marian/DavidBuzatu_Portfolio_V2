@@ -12,23 +12,28 @@ const ProjectCard = ({
         <div className='project-description'>
           <p>{description}</p>
         </div>
-        <div className='date'>
-          <button className='btn btn-date'>
-            <span className='material-icons-outlined'>date_range</span>
+        <div className='body-footer'>
+          <div className='date'>
+            <button className='btn btn-date'>
+              <span className='material-icons-outlined'>date_range</span>
+            </button>
+            <p>
+              Updated on:
+              <br />
+              {new Date(date_created).toLocaleDateString(
+                {},
+                {
+                  timeZone: 'UTC',
+                  month: 'short',
+                  day: '2-digit',
+                  year: 'numeric',
+                }
+              )}
+            </p>
+          </div>
+          <button className='btn btn-project btn-3d-hover'>
+            See repository
           </button>
-          <p>
-            Updated on:
-            <br />
-            {new Date(date_created).toLocaleDateString(
-              {},
-              {
-                timeZone: 'UTC',
-                month: 'short',
-                day: '2-digit',
-                year: 'numeric',
-              }
-            )}
-          </p>
         </div>
       </div>
       <div className='footer'>

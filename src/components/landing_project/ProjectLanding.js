@@ -39,10 +39,12 @@ const ProjectLanding = () => {
   return (
     <div className='container-projects'>
       <h2>My GitHub projects</h2>
-      <div className='container-projects-list'>
-        {projects.map((project, idx) => (
-          <ProjectCard key={idx} project={project} />
-        ))}
+      <div className='container-background'>
+        <div className='container-projects-list'>
+          {projects.map((project, idx) => (
+            <ProjectCard key={idx} project={project} />
+          ))}
+        </div>
       </div>
     </div>
   );

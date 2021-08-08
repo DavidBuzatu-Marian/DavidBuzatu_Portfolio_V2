@@ -48,6 +48,12 @@
     position: relative;
   }
 
+  &.btn-project {
+    background-color: $purple-color;
+    border-color: $purple-color;
+    position: relative;
+  }
+
   &.btn-menu {
     background-color: #ffffff;
     color: #c4c4c4;

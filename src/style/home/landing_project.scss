@@ -1,5 +1,4 @@
 .container-projects {
-  margin-top: 2rem;
   background-color: $dark-green-color;
   display: flex;
   flex-direction: column;
@@ -11,8 +10,15 @@
     margin-top: 2rem;
   }
 
+  .container-background {
+    background-color: $white-background-color;
+    border-top-left-radius: 3rem;
+    display: flex;
+  }
+
   &-list {
     display: grid;
+    margin: 0 auto;
     grid-template-columns: 1fr;
     background-color: $white-background-color;
     border-top-left-radius: 3rem;
@@ -28,6 +34,8 @@
       align-items: flex-start;
       text-align: start;
       border-radius: 3rem;
+      align-self: center;
+      justify-self: center;
 
       .body {
         padding: 1rem 1.5rem;
@@ -45,8 +53,22 @@
             font-weight: 300;
           }
         }
-        .date {
+        &-footer {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
           margin-top: 1rem;
+        }
+
+        .btn-project {
+          padding: 0.25rem 0.5rem;
+          font-size: 0.5rem;
+          margin-left: 1rem;
+          //   justify-self: flex-end;
+          //   align-self: flex-end;
+        }
+        .date {
           display: flex;
           align-items: center;
           .btn-date {
@@ -60,7 +82,7 @@
           p {
             margin-left: 1rem;
             font-weight: 300;
-            font-size: 0.75rem;
+            font-size: 0.625rem;
           }
         }
       }
@@ -77,5 +99,70 @@
         text-align: center;
       }
     }
+  }
+}
+
+@media (min-width: 800px) {
+  .container-projects-list {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .card-project {
+      border-radius: 1rem;
+
+      .body-footer {
+        justify-content: flex-start;
+
+        .btn-project {
+          padding: 0.75rem 1.5rem;
+          font-size: 0.75rem;
+        }
+
+        .date p {
+          font-size: 0.75rem;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1080px) {
+  .container-projects {
+    h2 {
+      margin: 3rem 0 2rem;
+    }
+  }
+  .container-projects-list {
+    .card-project {
+      .body {
+        .project-title {
+          p {
+            font-size: 1.75rem !important;
+          }
+        }
+        .project-description {
+          p {
+            font-size: 1rem !important;
+          }
+        }
+        .date p {
+          font-size: 0.875rem !important;
+        }
+      }
+      .footer {
+        p {
+          font-size: 1.5rem !important;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1400px) {
+  .container-projects-list {
+    grid-template-columns: 1fr 1fr;
+
+    padding-top: 3rem;
   }
 }

@@ -16,7 +16,7 @@
   &-blogs {
     display: grid;
     grid-template-columns: 1fr;
-    margin: 6rem 1rem 0rem;
+    margin: 4rem 1rem 0rem;
 
     .blog-card {
       max-width: 25rem;
@@ -74,6 +74,7 @@
 
   .btn-blogs {
     margin-top: 1rem;
+    margin-bottom: 2rem;
   }
 }
 
