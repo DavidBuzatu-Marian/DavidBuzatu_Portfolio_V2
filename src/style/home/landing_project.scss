@@ -1,0 +1,81 @@
+.container-projects {
+  margin-top: 2rem;
+  background-color: $dark-green-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  h2 {
+    color: #ffffff;
+    margin-top: 2rem;
+  }
+
+  &-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: $white-background-color;
+    border-top-left-radius: 3rem;
+    margin-top: 2rem;
+
+    .card-project {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      max-width: 39.25rem;
+      background-color: $gray-background-color;
+      min-height: 8rem;
+      margin: 2rem 1rem 0rem;
+      align-items: flex-start;
+      text-align: start;
+      border-radius: 3rem;
+
+      .body {
+        padding: 1rem 1.5rem;
+
+        .project-title {
+          p {
+            font-size: 1.125rem;
+            font-weight: 600;
+          }
+        }
+        .project-description {
+          margin-top: 0.5rem;
+          p {
+            font-size: 0.75rem;
+            font-weight: 300;
+          }
+        }
+        .date {
+          margin-top: 1rem;
+          display: flex;
+          align-items: center;
+          .btn-date {
+            background-color: $secondary-color;
+            color: #ffffff;
+            padding: 0.25rem 0.75rem;
+            span {
+              font-size: 1rem;
+            }
+          }
+          p {
+            margin-left: 1rem;
+            font-weight: 300;
+            font-size: 0.75rem;
+          }
+        }
+      }
+      .footer {
+        background-color: $blue-color;
+        color: #ffffff;
+        height: 100%;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        word-wrap: break-word;
+        padding: 0.5rem;
+        text-align: center;
+      }
+    }
+  }
+}
