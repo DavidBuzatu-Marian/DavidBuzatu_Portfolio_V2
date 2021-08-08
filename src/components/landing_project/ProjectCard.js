@@ -7,7 +7,7 @@ const ProjectCard = ({
     <div className='card-project'>
       <div className='body'>
         <div className='project-title'>
-          <p>{full_name}</p>
+          <p>{full_name && full_name.substr(19)}</p>
         </div>
         <div className='project-description'>
           <p>{description}</p>
@@ -39,7 +39,13 @@ const ProjectCard = ({
         </div>
       </div>
       <div className='footer'>
-        <p>{language}</p>
+        {language ? (
+          language
+            .match(/[A-Z][a-z]+/g)
+            .map((word, idx) => <p key={idx}>{word}</p>)
+        ) : (
+          <p>None</p>
+        )}
       </div>
     </div>
   );

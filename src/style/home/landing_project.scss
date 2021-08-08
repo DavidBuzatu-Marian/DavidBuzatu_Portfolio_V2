@@ -40,6 +40,7 @@
 
     .card-project {
       display: grid;
+      word-break: break-word;
       grid-template-columns: 3fr 1fr;
       max-width: 39.25rem;
       background-color: $gray-background-color;
@@ -111,6 +112,7 @@
         word-wrap: break-word;
         padding: 0.5rem;
         text-align: center;
+        flex-direction: column;
       }
     }
   }
@@ -192,6 +194,11 @@
   .container-projects-list {
     grid-template-columns: 1fr 1fr;
     padding-top: 3rem;
+
+    .card-project {
+      width: 39.25rem;
+      align-self: flex-start;
+    }
   }
 
   .container-background {
