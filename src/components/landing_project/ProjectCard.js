@@ -10,7 +10,11 @@ const ProjectCard = ({
           <p>{full_name && full_name.substr(19)}</p>
         </div>
         <div className='project-description'>
-          <p>{description}</p>
+          <p>
+            {description
+              ? description
+              : 'See repository ReadMe for more details'}
+          </p>
         </div>
         <div className='body-footer'>
           <div className='date'>
