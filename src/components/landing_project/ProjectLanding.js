@@ -1,5 +1,6 @@
 import React from 'react';
 import ProjectCard from './ProjectCard';
+import GitHubLogo from '../../img/github.svg';
 const projects = [
   {
     id: 1,
@@ -38,7 +39,10 @@ const projects = [
 const ProjectLanding = () => {
   return (
     <div className='container-projects'>
-      <h2>My GitHub projects</h2>
+      <h2>
+        <img src={GitHubLogo} alt='GitHub logo' />
+        My GitHub projects
+      </h2>
       <div className='container-background'>
         <div className='container-projects-list'>
           {projects.map((project, idx) => (
