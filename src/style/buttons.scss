@@ -12,15 +12,12 @@
   z-index: 1;
   text-transform: capitalize;
 
-  &.btn-projects {
-    background-color: $primary-color;
-    position: relative;
-
+  &.btn-3d-hover {
     &:hover {
       &::after {
         top: 0;
         left: 0;
-        background-color: $primary-color;
+        background-color: inherit;
       }
     }
 
@@ -32,10 +29,23 @@
       border-radius: 0.5rem;
       top: 6.5%;
       left: 2.5%;
-      border: 1px solid $primary-color;
+      border: 1px solid;
+      border-color: inherit;
       transition: all 0.4s ease-in-out;
       z-index: -1;
     }
+  }
+
+  &.btn-projects {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    position: relative;
+  }
+
+  &.btn-blogs {
+    background-color: $secondary-color;
+    border-color: $secondary-color;
+    position: relative;
   }
 
   &.btn-menu {

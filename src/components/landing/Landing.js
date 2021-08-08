@@ -12,7 +12,7 @@ const Landing = () => {
           You came to the right place to find out more about me, my interests
           and, unexpectedly, about literature
         </h3>
-        <button className='btn btn-projects'>
+        <button className='btn btn-projects btn-3d-hover'>
           <p>See my projects</p>
         </button>
       </div>

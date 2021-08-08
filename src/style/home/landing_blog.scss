@@ -71,6 +71,10 @@
       }
     }
   }
+
+  .btn-blogs {
+    margin-top: 1rem;
+  }
 }
 
 @media (min-width: 800px) {
@@ -81,6 +85,11 @@
       .blog-card {
         margin-right: 1rem;
       }
+    }
+    .btn-blogs {
+      align-self: flex-end;
+      margin-right: calc((100vw - 2 * 25rem) / 2);
+      margin-top: 2.5rem;
     }
   }
 }
@@ -103,6 +112,10 @@
           }
         }
       }
+    }
+    .btn-blogs {
+      margin-right: calc((100vw - 3 * 25rem) / 2);
+      margin-top: 2rem;
     }
   }
 }

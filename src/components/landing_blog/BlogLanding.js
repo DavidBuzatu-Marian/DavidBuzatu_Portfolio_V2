@@ -61,6 +61,9 @@ const BlogLanding = () => {
           <BlogCard key={blog.id} blog={blog} />
         ))}
       </div>
+      <button className='btn btn-blogs btn-3d-hover'>
+        <p>See all my blog posts</p>
+      </button>
     </div>
   );
 };
