@@ -22,8 +22,14 @@ body {
   padding: 0;
 }
 
+a {
+  text-decoration: none !important;
+  color: inherit;
+}
+
 div,
-button {
+button,
+a {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
