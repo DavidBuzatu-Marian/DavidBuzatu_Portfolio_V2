@@ -78,6 +78,10 @@
     border-color: $white-background-color;
     position: relative;
     color: $dark-blue-background-color;
+
+    &:hover {
+      color: $white-background-color;
+    }
   }
 
   &.btn-menu {

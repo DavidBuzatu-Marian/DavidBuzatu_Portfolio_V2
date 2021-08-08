@@ -31,7 +31,9 @@ const ContactLanding = () => {
           <h2>Got your interest?</h2>
           <p>Reach out to me. Possibilities are endless.</p>
         </div>
-        <button className='btn btn-3d-hover btn-contact'>Contact me</button>
+        <button className='btn btn-3d-hover btn-contact'>
+          <p>Contact me</p>
+        </button>
       </div>
       <div className='horizontal-delimiter' />
       <div className='follow-container'>
