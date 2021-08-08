@@ -1,6 +1,7 @@
 import React from 'react';
 import ProjectCard from './ProjectCard';
 import GitHubLogo from '../../img/github.svg';
+
 const projects = [
   {
     id: 1,
@@ -50,7 +51,15 @@ const ProjectLanding = () => {
           ))}
         </div>
         <button className='btn btn-github btn-3d-hover'>
-          <p>See GitHub</p>
+          <p>
+            <a
+              href='https://github.com/DavidBuzatu-Marian'
+              target='_blank'
+              rel='noreferrer'
+            >
+              See GitHub
+            </a>
+          </p>
         </button>
       </div>
     </div>
