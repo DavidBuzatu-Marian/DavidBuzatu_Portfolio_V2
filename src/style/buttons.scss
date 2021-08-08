@@ -73,6 +73,13 @@
     }
   }
 
+  &.btn-contact {
+    background-color: $white-background-color;
+    border-color: $white-background-color;
+    position: relative;
+    color: $dark-blue-background-color;
+  }
+
   &.btn-menu {
     background-color: #ffffff;
     color: #c4c4c4;
