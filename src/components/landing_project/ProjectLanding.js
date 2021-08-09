@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ProjectCard from './ProjectCard';
 import GitHubLogo from '../../img/github.svg';
-import config from '../../config/default.json';
 import axios from 'axios';
 import { Element } from 'react-scroll';
 
@@ -18,7 +17,7 @@ const ProjectLanding = () => {
       return repos;
     };
     const fetchProfileInfo = async () => {
-      const token = config ? config.github_api : process.env.GITHUB_API;
+      const token = process.env.REACT_APP_GITHUB_API;
       axios.defaults.headers.common['Authorization'] = 'token ' + token;
       const res = await axios.get(
         'https://api.github.com/users/DavidBuzatu-Marian/repos'
