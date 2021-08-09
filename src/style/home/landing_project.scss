@@ -47,7 +47,7 @@
       display: grid;
       word-break: break-word;
       grid-template-columns: 3fr 1fr;
-      max-width: 39.25rem;
+      max-width: 25rem;
       background-color: $gray-background-color;
       min-height: 8rem;
       margin: 2rem 1rem 0rem;
@@ -123,6 +123,13 @@
   }
 }
 
+@media (min-width: 400px) {
+  .card-project {
+    width: 25rem;
+    max-width: 39.25rem;
+  }
+}
+
 @media (min-width: 800px) {
   .container-projects-list {
     justify-content: center;
@@ -130,6 +137,8 @@
     text-align: center;
 
     .card-project {
+      width: 39.25rem;
+      max-width: none;
       border-radius: 1rem;
 
       .body-footer {

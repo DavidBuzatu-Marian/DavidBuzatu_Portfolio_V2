@@ -1,4 +1,5 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect } from 'react';
 import BlogCard from './BlogCard';
 import Triangle from './Triangle';
 
@@ -49,13 +50,22 @@ const mockBlogs = [
 ];
 
 const BlogLanding = () => {
+  useEffect(() => {
+    const fetchRepositoryInfo = async () => {
+      const token = process.env.REACT_APP_GITHUB_API;
+      axios.defaults.headers.common['Authorization'] = 'token ' + token;
+      const blogs = await axios.get(
+        'https://api.github.com/repos/DavidBuzatu-Marian/Blogs/git/trees/main'
+      );
+      console.log(blogs.data.tree);
+    };
+    fetchRepositoryInfo();
+  }, []);
+
   return (
     <div className='container'>
       <Triangle />
       <h2>Latest blog posts</h2>
-      {/* TODO 
-        get blogs from database
-      */}
       <div className='container-blogs fade-in-up'>
         {mockBlogs.map((blog) => (
           <BlogCard key={blog.id} blog={blog} />
