@@ -9,18 +9,22 @@ const socials = [
   {
     src: Instagram,
     name: 'Instagram',
+    link: '#',
   },
   {
     src: Dribbble,
     name: 'Dribbble',
+    link: 'https://dribbble.com/David_Buzatu',
   },
   {
     src: LinkedIn,
     name: 'LinkedIn',
+    link: 'https://www.linkedin.com/in/david-buzatu-160620198/',
   },
   {
     src: StackOverflow,
     name: 'Stack Overflow',
+    link: 'https://stackoverflow.com/users/11023871/david-buzatu',
   },
 ];
 
@@ -46,7 +50,11 @@ const ContactLanding = () => {
         {socials.map((social, idx) => (
           <div key={idx} className='social'>
             <img src={social.src} alt={social.name} />
-            <p>{social.name}</p>
+            <p>
+              <a href={social.link} target='_blank' rel='noreferrer'>
+                {social.name}
+              </a>
+            </p>
           </div>
         ))}
       </div>
