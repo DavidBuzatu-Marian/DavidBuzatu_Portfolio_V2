@@ -56,7 +56,7 @@ const BlogLanding = () => {
       {/* TODO 
         get blogs from database
       */}
-      <div className='container-blogs'>
+      <div className='container-blogs fade-in-up'>
         {mockBlogs.map((blog) => (
           <BlogCard key={blog.id} blog={blog} />
         ))}

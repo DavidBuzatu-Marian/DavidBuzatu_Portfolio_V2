@@ -3,7 +3,7 @@ import { Comet } from './Comet';
 
 const Landing = () => {
   return (
-    <div className='title'>
+    <div className='title fade-in-up'>
       <div className='main'>
         <h1>
           Welcome to my <span className='title-bar'>world</span>

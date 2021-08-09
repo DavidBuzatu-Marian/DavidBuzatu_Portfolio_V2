@@ -30,7 +30,7 @@ const socials = [
 
 const ContactLanding = () => {
   return (
-    <div className='container-contact'>
+    <div className='container-contact fade-in-up'>
       <div className='container-contact-header'>
         <div className='container-contact-header-title'>
           <h2>Got your interest?</h2>
