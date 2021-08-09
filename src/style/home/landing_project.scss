@@ -38,6 +38,11 @@
     border-top-left-radius: 3rem;
     margin-top: 2rem;
 
+    .no-repos {
+      margin: 2rem;
+      font-weight: normal;
+    }
+
     .card-project {
       display: grid;
       word-break: break-word;

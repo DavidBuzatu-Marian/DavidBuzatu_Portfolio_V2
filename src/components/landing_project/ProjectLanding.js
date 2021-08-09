@@ -3,9 +3,10 @@ import ProjectCard from './ProjectCard';
 import GitHubLogo from '../../img/github.svg';
 import axios from 'axios';
 import { Element } from 'react-scroll';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const ProjectLanding = () => {
-  const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState(null);
 
   useEffect(() => {
     const getLatestSixUpdatedRepositories = (repositories) => {
@@ -30,16 +31,24 @@ const ProjectLanding = () => {
 
   return (
     <Element id='projects' name='projects'>
-      <div className='container-projects'>
+      <div className='container-projects fade-in-up'>
         <h2>
           <img src={GitHubLogo} alt='GitHub logo' />
           My GitHub projects
         </h2>
         <div className='container-background'>
           <div className='container-projects-list'>
-            {projects.map((project, idx) => (
-              <ProjectCard key={idx} project={project} />
-            ))}
+            {projects && projects.length > 0 ? (
+              projects.map((project, idx) => (
+                <ProjectCard key={idx} project={project} />
+              ))
+            ) : projects === null ? (
+              <CircularProgress />
+            ) : (
+              <p className='no-repos'>
+                No repositories available. Check your internet connection
+              </p>
+            )}
           </div>
           <button className='btn btn-github btn-3d-hover'>
             <p>
