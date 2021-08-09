@@ -3,6 +3,7 @@ import ProjectCard from './ProjectCard';
 import GitHubLogo from '../../img/github.svg';
 import config from '../../config/default.json';
 import axios from 'axios';
+import { Element } from 'react-scroll';
 
 const ProjectLanding = () => {
   const [projects, setProjects] = useState([]);
@@ -29,30 +30,32 @@ const ProjectLanding = () => {
   }, []);
 
   return (
-    <div className='container-projects'>
-      <h2>
-        <img src={GitHubLogo} alt='GitHub logo' />
-        My GitHub projects
-      </h2>
-      <div className='container-background'>
-        <div className='container-projects-list'>
-          {projects.map((project, idx) => (
-            <ProjectCard key={idx} project={project} />
-          ))}
+    <Element id='projects' name='projects'>
+      <div className='container-projects'>
+        <h2>
+          <img src={GitHubLogo} alt='GitHub logo' />
+          My GitHub projects
+        </h2>
+        <div className='container-background'>
+          <div className='container-projects-list'>
+            {projects.map((project, idx) => (
+              <ProjectCard key={idx} project={project} />
+            ))}
+          </div>
+          <button className='btn btn-github btn-3d-hover'>
+            <p>
+              <a
+                href='https://github.com/DavidBuzatu-Marian'
+                target='_blank'
+                rel='noreferrer'
+              >
+                See GitHub
+              </a>
+            </p>
+          </button>
         </div>
-        <button className='btn btn-github btn-3d-hover'>
-          <p>
-            <a
-              href='https://github.com/DavidBuzatu-Marian'
-              target='_blank'
-              rel='noreferrer'
-            >
-              See GitHub
-            </a>
-          </p>
-        </button>
       </div>
-    </div>
+    </Element>
   );
 };
 
