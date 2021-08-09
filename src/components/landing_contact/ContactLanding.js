@@ -3,6 +3,7 @@ import Instagram from '../../img/instagram.svg';
 import LinkedIn from '../../img/linkedin.svg';
 import Dribbble from '../../img/dribbble.svg';
 import StackOverflow from '../../img/stack-overflow.svg';
+import MailTo from './MailTo';
 
 const socials = [
   {
@@ -32,7 +33,12 @@ const ContactLanding = () => {
           <p>Reach out to me. Possibilities are endless.</p>
         </div>
         <button className='btn btn-3d-hover btn-contact'>
-          <p>Contact me</p>
+          <MailTo
+            email='davidm.buzatu@gmail.com'
+            subject='Hi! I am writing from your portfolio website'
+          >
+            <p>Contact me</p>
+          </MailTo>
         </button>
       </div>
       <div className='horizontal-delimiter' />
