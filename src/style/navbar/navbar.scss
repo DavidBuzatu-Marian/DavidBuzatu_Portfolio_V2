@@ -52,6 +52,19 @@
       }
     }
   }
+
+  .nav-active {
+    position: relative;
+    &::after {
+      content: '';
+      height: 0.25rem;
+      width: 100%;
+      position: absolute;
+      background-color: $ternary-color;
+      bottom: 0.5rem;
+      left: 0;
+    }
+  }
 }
 
 @media (min-width: 1080px) {
@@ -60,6 +73,18 @@
   }
   .navbar {
     flex-direction: row;
+    .nav-active {
+      position: relative;
+      &::after {
+        content: '';
+        height: 0.25rem;
+        width: 100%;
+        position: absolute;
+        background-color: $ternary-color;
+        bottom: -0.25rem;
+        left: 0;
+      }
+    }
   }
   .hamburger {
     display: none !important;
