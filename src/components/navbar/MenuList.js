@@ -29,7 +29,15 @@ const MenuList = () => {
           Projects
         </Link>
       </li>
-      <li>Resume</li>
+      <li>
+        <a
+          href='https://cloud.pdfelement.io/share/review/4TOdulHoE4tDDJkYojwSiSc6GwhaGdEhD2NgZxGWeV8N1QE0TOi_3I3FHqKqUMsXuYlIUVVYR_LslBJztbDy4Q?lang=en-us'
+          target='_blank'
+          rel='noreferrer'
+        >
+          Resume
+        </a>
+      </li>
     </ul>
   );
 };
