@@ -1,5 +1,6 @@
 import React from 'react';
 import { Comet } from './Comet';
+import { Link } from 'react-scroll';
 
 const Landing = () => {
   return (
@@ -13,7 +14,9 @@ const Landing = () => {
           and, unexpectedly, about literature
         </h3>
         <button className='btn btn-projects btn-3d-hover'>
-          <p>See my projects</p>
+          <Link to='projects' spy={true} smooth={true} duration={500}>
+            <p>See my projects</p>
+          </Link>
         </button>
       </div>
       <Comet />
