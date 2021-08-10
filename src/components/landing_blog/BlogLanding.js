@@ -28,7 +28,7 @@ const BlogLanding = () => {
         )}
       </div>
       <button className='btn btn-blogs btn-3d-hover'>
-        <p>See all my blog posts</p>
+        <p>Coming soon</p>
       </button>
     </div>
   );
