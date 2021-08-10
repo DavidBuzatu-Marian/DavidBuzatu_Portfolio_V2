@@ -9,20 +9,32 @@ export const getLatestBlogs = async () => {
   const blogsPromises = await Promise.allSettled(requests_for_blog);
   let blogs = [];
   blogsPromises.forEach((blog) => {
-    let content = atob(blog.value.data.content);
-    const splittedContentOnEnter = content.split('\n');
-    blogs.push({
-      content: getContent(splittedContentOnEnter),
-      posted_at: getPostedAtDate(splittedContentOnEnter),
-      blog_image: getBlogImage(splittedContentOnEnter),
-      title: getBlogTitle(splittedContentOnEnter),
-      tags: getTags(splittedContentOnEnter),
-    });
+    blogs.push(createBlogObject(blog.data));
   });
   blogs.sort((b1, b2) => {
     return b2.posted_at - b1.posted_at;
   });
   return blogs;
+};
+
+export const getBlog = async (sha) => {
+  const blog = await axios.get(
+    `https://api.github.com/repos/DavidBuzatu-Marian/Blogs/git/blobs/${sha}`
+  );
+  return createBlogObject(blog);
+};
+
+const createBlogObject = (blog) => {
+  let content = atob(blog.data.content);
+  const splittedContentOnEnter = content.split('\n');
+  return {
+    content: getContent(splittedContentOnEnter),
+    posted_at: getPostedAtDate(splittedContentOnEnter),
+    blog_image: getBlogImage(splittedContentOnEnter),
+    title: getBlogTitle(splittedContentOnEnter),
+    tags: getTags(splittedContentOnEnter),
+    sha: blog.data.sha,
+  };
 };
 
 const getBlogs = async () => {
