@@ -1,14 +1,13 @@
 import React from 'react';
 import Tag from './Tag';
 import { Link } from 'react-router-dom';
+import parse from 'html-react-parser';
 
-const BlogCard = ({ blog: { title, date_created, blog_image, tags } }) => {
+const BlogCard = ({ blog: { title, posted_at, blog_image, tags } }) => {
   return (
     <Link to='#'>
       <div className='blog-card'>
-        <div className='header'>
-          <img src={blog_image} alt='Contains info about blog' />
-        </div>
+        <div className='header'>{parse(blog_image)}</div>
         <div className='body'>
           <div className='blog-title'>
             <p>{title}</p>
@@ -18,7 +17,7 @@ const BlogCard = ({ blog: { title, date_created, blog_image, tags } }) => {
               <span className='material-icons-outlined'>date_range</span>
             </button>
             <p>
-              {new Date(date_created).toLocaleDateString(
+              {new Date(posted_at).toLocaleDateString(
                 {},
                 {
                   timeZone: 'UTC',

@@ -34,7 +34,9 @@ const getBlogs = async () => {
 };
 
 const getTags = (splittedContentOnEnter) => {
-  return JSON.parse(eval(splittedContentOnEnter[4]));
+  return JSON.parse(
+    splittedContentOnEnter[4].slice(1, splittedContentOnEnter[4].length - 1)
+  );
 };
 
 const getContent = (splittedContentOnEnter) => {
