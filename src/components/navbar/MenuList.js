@@ -7,15 +7,15 @@ const MenuList = () => {
   return (
     <ul>
       <li className={`${'home' === activeMenu ? 'nav-active' : ''}`}>
-        <RouterLink to='#' onClick={(e) => setActiveMenu('home')}>
+        <RouterLink to='/' onClick={(e) => setActiveMenu('home')}>
           Home
         </RouterLink>
       </li>
-      <li className={`${'blog' === activeMenu ? 'nav-active' : ''}`}>
-        <RouterLink to='#' onClick={(e) => setActiveMenu('blog')}>
+      {/* <li className={`${'blog' === activeMenu ? 'nav-active' : ''}`}>
+        <RouterLink to='/' onClick={(e) => setActiveMenu('blog')}>
           Blog
         </RouterLink>
-      </li>
+      </li> */}
       <li className={`${'projects' === activeMenu ? 'nav-active' : ''}`}>
         {' '}
         <Link
@@ -31,7 +31,7 @@ const MenuList = () => {
       </li>
       <li>
         <a
-          href='https://cloud.pdfelement.io/share/review/4TOdulHoE4tDDJkYojwSiSc6GwhaGdEhD2NgZxGWeV8N1QE0TOi_3I3FHqKqUMsXuYlIUVVYR_LslBJztbDy4Q?lang=en-us'
+          href='https://drive.google.com/file/d/1QcvQDyKShHoDX42v12UkHMlxMvL1_eVl/view?usp=sharing'
           target='_blank'
           rel='noreferrer'
         >
