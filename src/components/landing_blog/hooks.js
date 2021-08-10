@@ -55,9 +55,7 @@ const getContent = (splittedContentOnEnter) => {
   const contentAfterTags = splittedContentOnEnter.slice(5);
   let content = '';
   contentAfterTags.forEach((line) => {
-    if (line !== '') {
-      content += line + '\n';
-    }
+    content += line + '\n';
   });
   return content;
 };

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import parse from 'html-react-parser';
 import Markdown from 'markdown-to-jsx';
 import { getBlog } from '../landing_blog/hooks';
+import Tag from '../landing_blog/Tag';
 const Blog = ({ blogProp, match }) => {
   const [blog, setBlog] = useState(blogProp);
 
@@ -26,7 +27,11 @@ const Blog = ({ blogProp, match }) => {
       </div>
       <h1>Title</h1>
       <div className='container-blog-tags'>
-        <div className='tags'>...tags</div>
+        <div className='tags'>
+          {blog
+            ? blog.tags.map((tag, idx) => <Tag key={idx} tag={tag} />)
+            : 'No blog tags found. Check your internet connection'}
+        </div>
       </div>
       <div className='blog-image'>{blog ? parse(blog.blog_image) : ''}</div>
       <div className='container-blog-content'>
