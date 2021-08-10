@@ -2,12 +2,14 @@
   "name": "portfolio_v2",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://DavidBuzatu-Marian.github.io/DavidBuzatu_Portfolio_V2",
   "dependencies": {
     "@material-ui/core": "^4.12.3",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
+    "gh-pages": "^3.2.3",
     "hamburger-react": "^2.4.1",
     "html-react-parser": "^1.2.7",
     "markdown-to-jsx": "^7.1.3",
@@ -23,7 +25,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
