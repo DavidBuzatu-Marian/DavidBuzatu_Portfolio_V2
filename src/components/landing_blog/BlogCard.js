@@ -3,9 +3,9 @@ import Tag from './Tag';
 import { Link } from 'react-router-dom';
 import parse from 'html-react-parser';
 
-const BlogCard = ({ blog: { title, posted_at, blog_image, tags } }) => {
+const BlogCard = ({ blog: { title, posted_at, blog_image, tags, sha } }) => {
   return (
-    <Link to='#'>
+    <Link to={`/blogs/${sha}`}>
       <div className='blog-card'>
         <div className='header'>{parse(blog_image)}</div>
         <div className='body'>

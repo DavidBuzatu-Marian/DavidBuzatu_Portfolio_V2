@@ -9,7 +9,7 @@ export const getLatestBlogs = async () => {
   const blogsPromises = await Promise.allSettled(requests_for_blog);
   let blogs = [];
   blogsPromises.forEach((blog) => {
-    blogs.push(createBlogObject(blog.data));
+    blogs.push(createBlogObject(blog.value));
   });
   blogs.sort((b1, b2) => {
     return b2.posted_at - b1.posted_at;

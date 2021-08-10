@@ -2,18 +2,19 @@ import React, { useEffect, useState } from 'react';
 import parse from 'html-react-parser';
 import Markdown from 'markdown-to-jsx';
 import { getBlog } from '../landing_blog/hooks';
-const Blog = ({ blog_prop, match }) => {
-  const [blog, setBlog] = useState(blog_prop);
+const Blog = ({ blogProp, match }) => {
+  const [blog, setBlog] = useState(blogProp);
 
   useEffect(() => {
     const getBlogAndSetState = async (id) => {
       const blog = await getBlog(id);
-      console.log(blog);
       setBlog(blog);
     };
 
     if (blog === undefined) {
       getBlogAndSetState(match.params.id);
+    } else {
+      setBlog(blogProp);
     }
     // eslint-disable-next-line
   }, []);
