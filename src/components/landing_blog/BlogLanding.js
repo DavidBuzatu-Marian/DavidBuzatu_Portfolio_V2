@@ -1,7 +1,7 @@
-import axios from 'axios';
 import React, { useEffect } from 'react';
 import BlogCard from './BlogCard';
 import Triangle from './Triangle';
+import { getLatestBlogs } from './hooks';
 
 const mockBlogs = [
   {
@@ -52,12 +52,8 @@ const mockBlogs = [
 const BlogLanding = () => {
   useEffect(() => {
     const fetchRepositoryInfo = async () => {
-      const token = process.env.REACT_APP_GITHUB_API;
-      axios.defaults.headers.common['Authorization'] = 'token ' + token;
-      const blogs = await axios.get(
-        'https://api.github.com/repos/DavidBuzatu-Marian/Blogs/git/trees/main'
-      );
-      console.log(blogs.data.tree);
+      const blogs = await getLatestBlogs();
+      console.log(blogs);
     };
     fetchRepositoryInfo();
   }, []);
