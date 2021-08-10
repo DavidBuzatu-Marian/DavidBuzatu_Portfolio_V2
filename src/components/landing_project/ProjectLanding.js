@@ -18,8 +18,8 @@ const ProjectLanding = () => {
       return repos;
     };
     const fetchProfileInfo = async () => {
-      const token = process.env.REACT_APP_GITHUB_API;
-      axios.defaults.headers.common['Authorization'] = 'token ' + token;
+      // const token = process.env.REACT_APP_GITHUB_API;
+      // axios.defaults.headers.common['Authorization'] = 'token ' + token;
       const res = await axios.get(
         'https://api.github.com/users/DavidBuzatu-Marian/repos'
       );

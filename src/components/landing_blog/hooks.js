@@ -38,8 +38,8 @@ const createBlogObject = (blog) => {
 };
 
 const getBlogs = async () => {
-  const token = process.env.REACT_APP_GITHUB_API;
-  axios.defaults.headers.common['Authorization'] = 'token ' + token;
+  // const token = process.env.REACT_APP_GITHUB_API;
+  // axios.defaults.headers.common['Authorization'] = 'token ' + token;
   return await axios.get(
     'https://api.github.com/repos/DavidBuzatu-Marian/Blogs/contents'
   );
