@@ -1,9 +1,21 @@
-import React, { useState } from 'react';
-import { Link } from 'react-scroll';
-import { Link as RouterLink } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
+import ProjectsLinks from './ProjectsLinks';
 
 const MenuList = () => {
   const [activeMenu, setActiveMenu] = useState('home');
+  const [link, setLink] = useState(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    const blogPage = location.pathname.indexOf('blogs');
+    if (blogPage !== -1) {
+      setLink('/');
+      setActiveMenu('');
+    } else {
+      setLink(null);
+    }
+  }, [location]);
   return (
     <ul>
       <li className={`${'home' === activeMenu ? 'nav-active' : ''}`}>
@@ -18,16 +30,7 @@ const MenuList = () => {
       </li> */}
       <li className={`${'projects' === activeMenu ? 'nav-active' : ''}`}>
         {' '}
-        <Link
-          to='projects'
-          spy={true}
-          smooth={true}
-          duration={500}
-          activeClass={'active'}
-          onClick={(e) => setActiveMenu('projects')}
-        >
-          Projects
-        </Link>
+        <ProjectsLinks link={link} setActiveMenu={setActiveMenu} />
       </li>
       <li>
         <a
