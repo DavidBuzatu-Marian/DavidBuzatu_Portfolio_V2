@@ -1,25 +1,28 @@
 {
   "files": {
-    "main.css": "/DavidBuzatu_Portfolio_V2/static/css/main.be12dc14.chunk.css",
-    "main.js": "/DavidBuzatu_Portfolio_V2/static/js/main.093f460c.chunk.js",
-    "main.js.map": "/DavidBuzatu_Portfolio_V2/static/js/main.093f460c.chunk.js.map",
+    "main.css": "/DavidBuzatu_Portfolio_V2/static/css/main.f5cfea63.chunk.css",
+    "main.js": "/DavidBuzatu_Portfolio_V2/static/js/main.e6501f51.chunk.js",
+    "main.js.map": "/DavidBuzatu_Portfolio_V2/static/js/main.e6501f51.chunk.js.map",
     "runtime-main.js": "/DavidBuzatu_Portfolio_V2/static/js/runtime-main.4c394692.js",
     "runtime-main.js.map": "/DavidBuzatu_Portfolio_V2/static/js/runtime-main.4c394692.js.map",
-    "static/js/2.f084d2da.chunk.js": "/DavidBuzatu_Portfolio_V2/static/js/2.f084d2da.chunk.js",
-    "static/js/2.f084d2da.chunk.js.map": "/DavidBuzatu_Portfolio_V2/static/js/2.f084d2da.chunk.js.map",
+    "static/js/2.bcb87334.chunk.js": "/DavidBuzatu_Portfolio_V2/static/js/2.bcb87334.chunk.js",
+    "static/js/2.bcb87334.chunk.js.map": "/DavidBuzatu_Portfolio_V2/static/js/2.bcb87334.chunk.js.map",
     "index.html": "/DavidBuzatu_Portfolio_V2/index.html",
-    "static/css/main.be12dc14.chunk.css.map": "/DavidBuzatu_Portfolio_V2/static/css/main.be12dc14.chunk.css.map",
-    "static/js/2.f084d2da.chunk.js.LICENSE.txt": "/DavidBuzatu_Portfolio_V2/static/js/2.f084d2da.chunk.js.LICENSE.txt",
+    "static/css/main.f5cfea63.chunk.css.map": "/DavidBuzatu_Portfolio_V2/static/css/main.f5cfea63.chunk.css.map",
+    "static/js/2.bcb87334.chunk.js.LICENSE.txt": "/DavidBuzatu_Portfolio_V2/static/js/2.bcb87334.chunk.js.LICENSE.txt",
     "static/media/dribbble.47df96eb.svg": "/DavidBuzatu_Portfolio_V2/static/media/dribbble.47df96eb.svg",
+    "static/media/facebook.17af2520.svg": "/DavidBuzatu_Portfolio_V2/static/media/facebook.17af2520.svg",
     "static/media/github.95d2d1e1.svg": "/DavidBuzatu_Portfolio_V2/static/media/github.95d2d1e1.svg",
     "static/media/instagram.ade23966.svg": "/DavidBuzatu_Portfolio_V2/static/media/instagram.ade23966.svg",
     "static/media/linkedin.15322ce2.svg": "/DavidBuzatu_Portfolio_V2/static/media/linkedin.15322ce2.svg",
-    "static/media/stack-overflow.2e20c2af.svg": "/DavidBuzatu_Portfolio_V2/static/media/stack-overflow.2e20c2af.svg"
+    "static/media/linkedin_dark.6aed2cb0.svg": "/DavidBuzatu_Portfolio_V2/static/media/linkedin_dark.6aed2cb0.svg",
+    "static/media/stack-overflow.2e20c2af.svg": "/DavidBuzatu_Portfolio_V2/static/media/stack-overflow.2e20c2af.svg",
+    "static/media/twitter.1b8568f4.svg": "/DavidBuzatu_Portfolio_V2/static/media/twitter.1b8568f4.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.4c394692.js",
-    "static/js/2.f084d2da.chunk.js",
-    "static/css/main.be12dc14.chunk.css",
-    "static/js/main.093f460c.chunk.js"
+    "static/js/2.bcb87334.chunk.js",
+    "static/css/main.f5cfea63.chunk.css",
+    "static/js/main.e6501f51.chunk.js"
   ]
 }
