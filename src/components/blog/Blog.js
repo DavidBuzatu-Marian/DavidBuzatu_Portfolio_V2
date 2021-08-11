@@ -4,13 +4,18 @@ import Markdown from 'markdown-to-jsx';
 import { getBlog } from '../landing_blog/hooks';
 import Tag from '../landing_blog/Tag';
 import ShareOnSocials from './ShareOnSocials';
+import { CircularProgress } from '@material-ui/core';
 const Blog = ({ blogProp, match }) => {
   const [blog, setBlog] = useState(blogProp);
 
   useEffect(() => {
     const getBlogAndSetState = async (id) => {
-      const blog = await getBlog(id);
-      setBlog(blog);
+      try {
+        const blog = await getBlog(id);
+        setBlog(blog);
+      } catch (err) {
+        setBlog(undefined);
+      }
     };
 
     if (blog === undefined) {
@@ -24,14 +29,35 @@ const Blog = ({ blogProp, match }) => {
   return (
     <div className='container-blog'>
       <div className='posted-at'>
-        <p>Posted on 16 August 2021</p>
+        <p>
+          {' '}
+          {blog && blog !== undefined ? (
+            blog.posted_at.toLocaleString(
+              {},
+              {
+                timeZone: 'UTC',
+                month: 'long',
+                day: '2-digit',
+                year: 'numeric',
+              }
+            )
+          ) : !blog && blog !== undefined ? (
+            <CircularProgress />
+          ) : (
+            'No date found. Check your internet connection'
+          )}
+        </p>
       </div>
       <div className='container-blog-header'>
         <div className='container-blog-header-title'>
           <h1>
-            {blog
-              ? blog.title
-              : 'No title found. Check your internet connection'}
+            {blog && blog !== undefined ? (
+              blog.title
+            ) : !blog && blog !== undefined ? (
+              <CircularProgress />
+            ) : (
+              'No title found. Check your internet connection'
+            )}
           </h1>
           <div className='container-blog-tags'>
             <div className='tags'>
