@@ -5,13 +5,17 @@ import { getBlog } from '../landing_blog/hooks';
 import Tag from '../landing_blog/Tag';
 import ShareOnSocials from './ShareOnSocials';
 import { CircularProgress } from '@material-ui/core';
+import { Fragment } from 'react';
 const Blog = ({ blogProp, match }) => {
   const [blog, setBlog] = useState(blogProp);
-
+  function sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
   useEffect(() => {
     const getBlogAndSetState = async (id) => {
       try {
         const blog = await getBlog(id);
+        await sleep(2000);
         setBlog(blog);
       } catch (err) {
         setBlog(undefined);
@@ -25,58 +29,56 @@ const Blog = ({ blogProp, match }) => {
     }
     // eslint-disable-next-line
   }, []);
-
   return (
     <div className='container-blog'>
-      <div className='posted-at'>
-        <p>
-          {' '}
-          {blog && blog !== undefined ? (
-            blog.posted_at.toLocaleString(
-              {},
-              {
-                timeZone: 'UTC',
-                month: 'long',
-                day: '2-digit',
-                year: 'numeric',
-              }
-            )
-          ) : !blog && blog !== undefined ? (
-            <CircularProgress />
-          ) : (
-            'No date found. Check your internet connection'
-          )}
-        </p>
-      </div>
-      <div className='container-blog-header'>
-        <div className='container-blog-header-title'>
-          <h1>
-            {blog && blog !== undefined ? (
-              blog.title
-            ) : !blog && blog !== undefined ? (
-              <CircularProgress />
-            ) : (
-              'No title found. Check your internet connection'
-            )}
-          </h1>
-          <div className='container-blog-tags'>
-            <div className='tags'>
-              {blog
-                ? blog.tags.map((tag, idx) => <Tag key={idx} tag={tag} />)
-                : 'No blog tags found. Check your internet connection'}
-            </div>
+      {blog && blog !== undefined ? (
+        <Fragment>
+          <div className='posted-at'>
+            <p>
+              {blog.posted_at.toLocaleString(
+                {},
+                {
+                  timeZone: 'UTC',
+                  month: 'long',
+                  day: '2-digit',
+                  year: 'numeric',
+                }
+              )}
+            </p>
           </div>
+          <div className='container-blog-header'>
+            <div className='container-blog-header-title'>
+              <h1>{blog.title}</h1>
+
+              <div className='container-blog-tags'>
+                <div className='tags'>
+                  {blog.tags.map((tag, idx) => (
+                    <Tag key={idx} tag={tag} />
+                  ))}
+                </div>
+              </div>
+            </div>
+            <ShareOnSocials
+              blogTitle={
+                blog
+                  ? blog.title
+                  : 'No title found. Check your internet connection'
+              }
+            />
+          </div>
+          <div className='blog-image'>{blog ? parse(blog.blog_image) : ''}</div>
+          <div className='container-blog-content'>
+            <Markdown>{blog ? blog.content : ''}</Markdown>
+          </div>
+        </Fragment>
+      ) : blog === undefined ? (
+        <div>
+          <CircularProgress />
+          <p>Loading blog...</p>
         </div>
-        <ShareOnSocials
-          blogTitle={
-            blog ? blog.title : 'No title found. Check your internet connection'
-          }
-        />
-      </div>
-      <div className='blog-image'>{blog ? parse(blog.blog_image) : ''}</div>
-      <div className='container-blog-content'>
-        <Markdown>{blog ? blog.content : ''}</Markdown>
-      </div>
+      ) : (
+        <h1>No blog found. Check your internet connection</h1>
+      )}
     </div>
   );
 };
