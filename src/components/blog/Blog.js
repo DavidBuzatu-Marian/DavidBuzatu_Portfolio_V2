@@ -6,16 +6,14 @@ import Tag from '../landing_blog/Tag';
 import ShareOnSocials from './ShareOnSocials';
 import { CircularProgress } from '@material-ui/core';
 import { Fragment } from 'react';
+import TableOfContent from './TableOfContent';
+
 const Blog = ({ blogProp, match }) => {
   const [blog, setBlog] = useState(blogProp);
-  function sleep(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
-  }
   useEffect(() => {
     const getBlogAndSetState = async (id) => {
       try {
         const blog = await getBlog(id);
-        await sleep(2000);
         setBlog(blog);
       } catch (err) {
         setBlog(undefined);
@@ -69,6 +67,7 @@ const Blog = ({ blogProp, match }) => {
           <div className='blog-image'>{blog ? parse(blog.blog_image) : ''}</div>
           <div className='container-blog-content'>
             <Markdown>{blog ? blog.content : ''}</Markdown>
+            <TableOfContent content={blog.content} />
           </div>
         </Fragment>
       ) : blog === undefined ? (
