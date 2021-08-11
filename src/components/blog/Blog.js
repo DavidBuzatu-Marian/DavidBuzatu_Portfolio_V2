@@ -3,6 +3,7 @@ import parse from 'html-react-parser';
 import Markdown from 'markdown-to-jsx';
 import { getBlog } from '../landing_blog/hooks';
 import Tag from '../landing_blog/Tag';
+import ShareOnSocials from './ShareOnSocials';
 const Blog = ({ blogProp, match }) => {
   const [blog, setBlog] = useState(blogProp);
 
@@ -25,13 +26,26 @@ const Blog = ({ blogProp, match }) => {
       <div className='posted-at'>
         <p>Posted on 16 August 2021</p>
       </div>
-      <h1>Title</h1>
-      <div className='container-blog-tags'>
-        <div className='tags'>
-          {blog
-            ? blog.tags.map((tag, idx) => <Tag key={idx} tag={tag} />)
-            : 'No blog tags found. Check your internet connection'}
+      <div className='container-blog-header'>
+        <div className='container-blog-header-title'>
+          <h1>
+            {blog
+              ? blog.title
+              : 'No title found. Check your internet connection'}
+          </h1>
+          <div className='container-blog-tags'>
+            <div className='tags'>
+              {blog
+                ? blog.tags.map((tag, idx) => <Tag key={idx} tag={tag} />)
+                : 'No blog tags found. Check your internet connection'}
+            </div>
+          </div>
         </div>
+        <ShareOnSocials
+          blogTitle={
+            blog ? blog.title : 'No title found. Check your internet connection'
+          }
+        />
       </div>
       <div className='blog-image'>{blog ? parse(blog.blog_image) : ''}</div>
       <div className='container-blog-content'>
