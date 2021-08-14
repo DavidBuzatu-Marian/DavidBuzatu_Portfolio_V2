@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+# Table of contents
+- [Personal portfolio and blog](#personal-portfolio-and-blog)
+  * [Background](#background)
+  * [Using GitHub as a database](#using-github-as-a-database)
+  * [Tech Stack](#tech-stack)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Personal portfolio and blog
 
-## Available Scripts
+Created to showcase my latest work, start personal blog related to tech and writing, and providing a way of getting in touch easily.
 
-In the project directory, you can run:
+*Available at: [link_to_portfolio](https://davidbuzatu-marian.github.io/DavidBuzatu_Portfolio_V2/#/)*
 
-### `yarn start`
+## Background
+Personal websites have always been a thing I took pleasure in building. I found that they could provide great insights into someone's style, workflow, and interests.
+However, with this portfolio I've wanted to take it to the next level. I wanted to have an automated platform that could showcase the latest repositories I've been working on, while also keeping a list of my latest blogs active and usable.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Initially, I was planning to keep my blogs in a MongoDB database used in another project (Datafy)[https://github.com/DavidBuzatu-Marian/Datafy]. However, I didn't want to set up an EC2 instance just to run the Datafy project for the blogs, especially because that contained end-points which are using personal tokens. The last thing I want is to have someone filling in my Google Calendar with random events.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Using GitHub as a database
+I knew GitHub was my best shot for hosting the static React app without the hurdle of setting up EC2 instances and deployment processes. Therefore, I realized I could use GitHub to store my blogs.
 
-### `yarn test`
+My blogs are written in Markdown, so displaying them in the React app would be as easy as using a library such as [markdown-to-jsx](https://github.com/probablyup/markdown-to-jsx). Once that was resolved, I figured out a pattern for the markdown I could use in order to perform a smart-preprocessing on it.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Tech Stack
+- Developed using [ReactJS](https://reactjs.org) in JavaScript
+- Used plain SCSS to bring website to life. Have used no external styling tool besides [hamburger](https://hamburger-react.netlify.app)
+- Created the design using [Figma](https://www.figma.com)
