@@ -6,8 +6,11 @@ export const getLatestBlogs = async () => {
   blogsFromRepository.data.forEach((blog) => {
     requests_for_blog.push(axios.get(blog.url));
   });
-  const blogsPromises = await Promise.allSettled(requests_for_blog);
+  let blogsPromises = await Promise.allSettled(requests_for_blog);
   let blogs = [];
+  blogsPromises = blogsPromises.filter((blog) => {
+    return blog.value.data.name !== 'README.md';
+  });
   blogsPromises.forEach((blog) => {
     blogs.push(createBlogObject(blog.value));
   });
@@ -18,13 +21,12 @@ export const getLatestBlogs = async () => {
 };
 
 export const getBlog = async (sha) => {
-  const blog = await axios.get(
+  return await axios.get(
     `https://api.github.com/repos/DavidBuzatu-Marian/Blogs/git/blobs/${sha}`
   );
-  return createBlogObject(blog);
 };
 
-const createBlogObject = (blog) => {
+export const createBlogObject = (blog) => {
   let content = atob(blog.data.content);
   const splittedContentOnEnter = content.split('\n');
   return {

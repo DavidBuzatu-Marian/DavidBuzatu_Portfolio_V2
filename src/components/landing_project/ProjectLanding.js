@@ -26,7 +26,12 @@ const ProjectLanding = () => {
       const repos = getLatestSixUpdatedRepositories(res.data);
       setProjects(repos);
     };
-    fetchProfileInfo();
+
+    try {
+      fetchProfileInfo();
+    } catch (err) {
+      setProjects(undefined);
+    }
   }, []);
 
   return (

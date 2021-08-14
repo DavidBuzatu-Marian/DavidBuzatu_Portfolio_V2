@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import parse from 'html-react-parser';
 import Markdown from 'markdown-to-jsx';
-import { getBlog } from '../landing_blog/hooks';
+import { getBlog, createBlogObject } from '../landing_blog/hooks';
 import Tag from '../landing_blog/Tag';
 import ShareOnSocials from './ShareOnSocials';
 import { CircularProgress } from '@material-ui/core';
@@ -14,7 +14,8 @@ const Blog = ({ blogProp, match }) => {
     const getBlogAndSetState = async (id) => {
       try {
         const blog = await getBlog(id);
-        setBlog(blog);
+        const blogObject = createBlogObject(blog);
+        setBlog(blogObject);
       } catch (err) {
         setBlog(undefined);
       }

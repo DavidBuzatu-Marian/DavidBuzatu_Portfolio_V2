@@ -8,8 +8,12 @@ const BlogLanding = () => {
   const [blogsArray, setBlogsArray] = useState(null);
   useEffect(() => {
     const fetchRepositoryInfo = async () => {
-      const blogs = await getLatestBlogs();
-      setBlogsArray(blogs);
+      try {
+        const blogs = await getLatestBlogs();
+        setBlogsArray(blogs);
+      } catch (err) {
+        setBlogsArray(undefined);
+      }
     };
     fetchRepositoryInfo();
   }, []);
