@@ -28,7 +28,9 @@ export const getBlog = async (sha) => {
 
 export const createBlogObject = (blog) => {
   let content = atob(blog.data.content);
-  const splittedContentOnEnter = content.split('\n');
+  const splittedContentOnEnter = content
+    .split('\n')
+    .filter((line) => line.length > 0);
   return {
     content: getContent(splittedContentOnEnter),
     posted_at: getPostedAtDate(splittedContentOnEnter),
@@ -49,12 +51,12 @@ const getBlogs = async () => {
 
 const getTags = (splittedContentOnEnter) => {
   return JSON.parse(
-    splittedContentOnEnter[4].slice(1, splittedContentOnEnter[4].length - 1)
+    splittedContentOnEnter[3].slice(1, splittedContentOnEnter[3].length - 1)
   );
 };
 
 const getContent = (splittedContentOnEnter) => {
-  const contentAfterTags = splittedContentOnEnter.slice(5);
+  const contentAfterTags = splittedContentOnEnter.slice(4);
   let content = '';
   contentAfterTags.forEach((line) => {
     content += line + '\n';
@@ -63,7 +65,7 @@ const getContent = (splittedContentOnEnter) => {
 };
 
 const getBlogTitle = (splittedContentOnEnter) => {
-  return splittedContentOnEnter[3].substr(2); // have newline before for readability
+  return splittedContentOnEnter[2].substr(2); // have newline before for readability
 };
 
 const getBlogImage = (splittedContentOnEnter) => {
