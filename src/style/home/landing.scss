@@ -49,12 +49,12 @@
       position: absolute;
       right: 5%;
       top: 20%;
-      max-width: 436px;
+      max-width: 35rem;
     }
   }
 }
 
-@media (min-width: 1920px) {
+@media (min-width: 1700px) {
   .title {
     margin-top: 12rem;
     flex-direction: row;
@@ -74,9 +74,9 @@
     svg {
       transform: rotate(0);
       position: absolute;
-      right: 10%;
+      right: 5%;
       top: auto;
-      max-width: 736px;
+      max-width: 40rem;
     }
   }
 }
