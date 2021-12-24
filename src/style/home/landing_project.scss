@@ -118,6 +118,10 @@
         padding: 0.5rem;
         text-align: center;
         flex-direction: column;
+
+        p {
+          font-size: .625rem !important;
+        }
       }
     }
   }
@@ -127,6 +131,16 @@
   .card-project {
     width: 25rem;
     max-width: 39.25rem;
+  }
+
+  .container-projects-list {
+    .card-project {
+      .footer {
+        p {
+          font-size: .75rem !important;
+        }
+      }
+    }
   }
 }
 
@@ -151,6 +165,12 @@
 
         .date p {
           font-size: 0.75rem;
+        }
+      }
+
+      .footer {
+        p {
+          font-size: .875rem !important;
         }
       }
     }
@@ -182,7 +202,7 @@
       }
       .footer {
         p {
-          font-size: 1.5rem !important;
+          font-size: 1rem !important;
         }
       }
     }

@@ -14,7 +14,6 @@ const ProjectCard = ({
         const res = await axios.get(languages_url)
         setLanguages(res.data);
       }
-      
 
       try {
         fetchLanguages();
@@ -62,7 +61,7 @@ const ProjectCard = ({
         </div>
       </div>
       <div className='footer'>
-        {languages !== null ? (
+        {languages !== null && Object.keys(languages).length > 0 ? (
           Object.keys(languages)
             .map((word, idx) => <p key={idx}>{word}</p>)
         ) : (
