@@ -43,7 +43,7 @@ const ProjectLanding = () => {
         </h2>
         <div className='container-background'>
           <div className='container-projects-list'>
-            {projects && projects.length > 0 ? (
+            {projects !== null && projects.length > 0 ? (
               projects.map((project, idx) => (
                 <ProjectCard key={idx} project={project} />
               ))

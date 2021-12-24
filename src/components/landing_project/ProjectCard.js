@@ -1,8 +1,27 @@
+import axios from 'axios';
 import React from 'react';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 const ProjectCard = ({
-  project: { full_name, updated_at, description, language, html_url },
+  project: { full_name, updated_at, description, languages_url, html_url },
 }) => {
+
+  const [languages, setLanguages] = useState(null)
+
+  useEffect(() => {
+      const fetchLanguages = async () => {
+        const res = await axios.get(languages_url)
+        setLanguages(res.data);
+      }
+      
+
+      try {
+        fetchLanguages();
+      } catch (error) {
+        setLanguages(null);
+      }
+  }, [languages_url])
   return (
     <div className='card-project'>
       <div className='body'>
@@ -43,9 +62,8 @@ const ProjectCard = ({
         </div>
       </div>
       <div className='footer'>
-        {language ? (
-          language
-            .match(/[A-Z][a-z]+/g)
+        {languages !== null ? (
+          Object.keys(languages)
             .map((word, idx) => <p key={idx}>{word}</p>)
         ) : (
           <p>None</p>
